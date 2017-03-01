@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nuevo almacén - SISRV</title>
+    <!--CSS globales inicio-->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/chosen/chosen.css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.4.6/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!--CSS globales fin-->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+</head>
+
+<body>
+    <header>
+        <!--       Menú principal inicio-->
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded bg-sisrv">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="SISRV"> SISRV
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="app" href="#">Max Sullca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Configuración</a>
+                        </li>
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link dropdown-toggle" href="#" id="notificaciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-globe" aria-hidden="true"><span>1</span></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificaciones">
+                                <a class="dropdown-item" href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nueva venta (Sucursal1) Nueva venta</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Nueva compra (Sucursal1)</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Reporte semanal</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Reporte mensual</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Reporte anual</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Nuevo Stock mínimo</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-usd" aria-hidden="true"></i> Pago por vencerse</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" title="Salir"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--        Menú principal fin-->
+        <!--       Menú secundario inicio-->
+        <div class="container">
+            <nav class="navbar navbar-toggleable-md navbar-light menu-bg">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContentt" aria-controls="navbarSupportedContentt" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContentt">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nueva Venta</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="ingrM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ventas</a>
+                            <div class="dropdown-menu" aria-labelledby="ingrM">
+                                <a class="dropdown-item" href="#">Facturas de venta</a>
+                                <a class="dropdown-item" href="#">Boletas de venta</a>
+                                <a class="dropdown-item" href="#">Tickets de venta</a>
+                                <a class="dropdown-item" href="#">Notas de crédito</a>
+                                <a class="dropdown-item" href="#">Pagos recibidos</a>
+                                <a class="dropdown-item" href="#">Cotizaciones</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compras</a>
+                            <div class="dropdown-menu" aria-labelledby="egreM">
+                                <a class="dropdown-item" href="#">Nueva compra</a>
+                                <a class="dropdown-item" href="#">Facturas de Compras</a>
+                                <a class="dropdown-item" href="#">Pagos realizados</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventario</a>
+                            <div class="dropdown-menu" aria-labelledby="inveM">
+                                <a class="dropdown-item" href="#">Nuevo ítem</a>
+                                <a class="dropdown-item" href="#">Lista de ítems</a>
+                                <a class="dropdown-item" href="#">Valor del inventario</a>
+                                <a class="dropdown-item" href="#">Almacenes</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cajas</a>
+                            <div class="dropdown-menu" aria-labelledby="inveM">
+                                <a class="dropdown-item" href="#">Nueva caja</a>
+                                <a class="dropdown-item" href="#">Lista de cajas</a>
+                                <a class="dropdown-item" href="#">Valor total</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contactos</a>
+                            <div class="dropdown-menu" aria-labelledby="egreM">
+                                <a class="dropdown-item" href="#">Nuevo contacto</a>
+                                <a class="dropdown-item" href="#">Todos</a>
+                                <a class="dropdown-item" href="#">Clientes</a>
+                                <a class="dropdown-item" href="#">Proveedores</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportes</a>
+                            <div class="dropdown-menu" aria-labelledby="inveM">
+                                <a class="dropdown-item" href="#">.. de ventas</a>
+                                <a class="dropdown-item" href="#">.. de compra</a>
+                                <a class="dropdown-item" href="#">.. administrativos</a>
+                                <a class="dropdown-item" href="#">.. contables</a>
+                                <a class="dropdown-item" href="#">.. por usuario</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="cateM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorización</a>
+                            <div class="dropdown-menu" aria-labelledby="cateM">
+                                <a class="dropdown-item" href="#">Categorías de ítems</a>
+                                <a class="dropdown-item active" href="#">Marcas de ítems</a>
+                                <a class="dropdown-item" href="#">Almacenes</a>
+                                <a class="dropdown-item" href="#">Tipos de venta</a>
+                                <a class="dropdown-item" href="#">Tipos de compra</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--        Menú secundario fin-->
+    </header>
+    <!--Contenido de almacenes add-->
+    <section>
+        <div class="container mt-4" id="container">
+            <h3><i class="fa fa-file-text-o" aria-hidden="true"></i> Nueva venta</h3>
+            <form>
+                <div class="row small my-4">
+                    <div class="col-lg-2 offset-lg-1" style="border-right:1px solid rgba(0,0,0,.1)">
+                        <div class="form-group">
+                            <label for="almacen_nombre">Usuario:</label>
+                            <input type="text" class="form-control form-control-sm mousetrap" id="almacen_nombre" name="almacen_nombre" placeholder="Nombre del almacén" value="maxsullca" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="almacen_ubicacion">Forma de pago: <span class="text-danger">*</span></label>
+                            <select placeholder="Forma de pago" class="form-control form-control-sm">
+                                <option value="United States" selected>Efectivo</option>
+                                <option value="United Kingdom">Crédito 8 días</option>
+                                <option value="Afghanistan">Crédito 15 días</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" style="border-right:1px solid rgba(0,0,0,.1)">
+                        <div class="row">
+                            <div class="form-group col-lg-4">
+                                <label for="almacen_descripcion">Ruc/Dni: <small><a href="#">+agregar</a></small></label>
+                                <input type="text" class="form-control form-control-sm mousetrap" id="almacen_nombre" name="almacen_nombre" value="10706714311">
+                            </div>
+                            <div class="form-group col-lg-8">
+                                <label for="almacen_descripcion">Nombre/Razón social:</label>
+                                <input type="text" class="form-control form-control-sm mousetrap" id="almacen_nombre" name="almacen_nombre">
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="almacen_descripcion">Dirección:</label>
+                                <input type="text" class="form-control form-control-sm mousetrap" id="almacen_nombre" name="almacen_nombre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="border-right:1px solid rgba(0,0,0,.1)">
+                        <div class="form-group">
+                            <label for="almacen_descripcion">Tipo de documento:</label>
+                            <select placeholder="Tipo de documento" class="form-control form-control-sm">
+                                <option value="United States" selected>Factura</option>
+                                <option value="United Kingdom">Boleta</option>
+                                <option value="Afghanistan">Proforma</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label for="almacen_descripcion">Número: <small><a href="#">^cambiar</a></small></label>
+                            <div class="nro-factura">
+                                <input type="text" class="form-control form-control-sm mousetrap" id="almacen_nombre" name="almacen_nombre" value="001" disabled>
+                                <input type="text" class="form-control form-control-sm mousetrap" id="almacen_nombre" name="almacen_nombre" value="003254" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="almacen_descripcion">Fecha: <small><a href="#">^cambiar</a></small></label>
+                            <input type="text" class="form-control form-control-sm mousetrap" id="almacen_nombre" name="almacen_nombre" value="17-01-2017" disabled>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-12 col-md-7 col-lg-3 small">
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label for="almacen_descripcion">Total descontado:</label>
+                                <input type="text" class="form-control mousetrap font-weight-bold text-right" id="almacen_nombre" name="almacen_nombre" value="43.00" disabled>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label for="almacen_descripcion">Total a cobrar:</label>
+                                <input type="text" class="form-control mousetrap font-weight-bold text-right bg-primary" id="almacen_nombre" name="almacen_nombre" value="3452.00" disabled>
+                            </div>
+                        </div>
+                    </div>
+-->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-ssm table-striped" id="newInvoice">
+                            <thead>
+                                <tr>
+                                    <th>Nº</th>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Marca</th>
+                                    <th class="text-center">Cant.</th>
+                                    <th class="text-right">Precio</th>
+                                    <th class="text-center" colspan="2">Dto.</th>
+                                    <th class="text-right">Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td title="1212232345455656">
+                                        <input type="text" class="form-control form-control-sm" value="1212232345455656">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control form-control-sm" value="Turbo FH-12 para modelos de volvo sy scania">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control form-control-sm" value="Volvo" disabled>
+                                    </td>
+                                    <td class="text-center">
+                                        <input type="number" class="form-control form-control-sm text-center" value="1">
+                                    </td>
+                                    <td class="">
+                                        <input type="text" value="15.00" class="text-right form-control form-control-sm">
+                                    </td>
+                                    <td class="text-right">
+                                        <input type="text" value="0%" class="text-right form-control form-control-sm">
+                                    </td>
+                                    <td class="text-right">
+                                        <input type="text" value="0.00" class="text-right form-control form-control-sm">
+                                    </td>
+                                    <td class="text-right">
+                                        <input type="text" value="49.00" class="text-right form-control form-control-sm">
+                                    </td>
+                                    <td class="text-center"><a href="#
+                                "><i class="fa fa-close"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>43435454675675</td>
+                                    <td>Turbo FH-12 para modelos de volvo sy scania</td>
+                                    <td>Malhe</td>
+                                    <td class="text-center">2</td>
+                                    <td class="text-right"><a href="#" id="group" data-type="checklist" data-pk="1" data-value="5" data-source="http://www.json-generator.com/api/json/get/cqJpNtZxlu" data-title="Select group" class="mprecio">430.00</a></td>
+                                    <td class="text-right">5%</td>
+                                    <td class="text-right">6.00</td>
+                                    <td class="text-right">430.00</td>
+                                    <td class="text-center"><a href="#
+                                "><i class="fa fa-close"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>435465767654</td>
+                                    <td>Turbo FH-12 para modelos de volvo sy scania</td>
+                                    <td>Scania</td>
+                                    <td class="text-center">43</td>
+                                    <td class="mprecio text-right">3452.00</td>
+                                    <td class="text-right">3%</td>
+                                    <td class="text-right">2.00</td>
+                                    <td class="text-right" class="btn btn-lg btn-danger">3452.00</td>
+                                    <td class="text-center"><a href="#
+                                "><i class="fa fa-close"></i></a></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="font-weight-bold">
+                                    <td class="font-weight-normal" colspan="2"><a href="#">+ añadir fila</a></td>
+                                    <td class="text-right font-weight-normal" colspan="2">Totales:</td>
+                                    <td class="text-center">46</td>
+                                    <td class="text-right">3452.00</td>
+                                    <td class="text-right">0%</td>
+                                    <td class="text-right">0.00</td>
+                                    <td class="text-right">
+                                        <div id="mySum"></div>
+                                    </td>
+                                    <td class="text-center"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="row py-4">
+                    <div class="col-12 col-md-7 col-lg-12 text-right">
+                        <button class="btn btn-sm">Cancelar</button>
+                        <button class="btn btn-primary btn-sm">Guardar</button>
+                        <button class="btn btn-primary btn-sm">Guardar y cobrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--Contenido de almacenes add fin-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">HOla</div>
+                <div class="col-md-6 col-lg-3">GOla</div>
+                <div class="col-md-6 col-lg-3">Dola</div>
+                <div class="col-md-6 col-lg-3">Dola</div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">SISRV es un producto de SintaxSys.com - 2016</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="libs/jquery/jquery-3.1.1.min.js"></script>
+    <script src="libs/bootstrap/js/tether.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <!--    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.4.6/bootstrap-editable/js/bootstrap-editable.min.js"></script>-->
+    <script src="libs/accounting/accounting.min.js"></script>
+    <script src="libs/chosen/chosen.jquery.min.js"></script>
+
+    <script>
+        accounting.settings = {
+            currency: {
+                symbol: "S/.", // default currency symbol is '$'
+                format: "%s%v", // controls output: %s = symbol, %v = value/number (can be object: see below)
+                decimal: ".", // decimal point separator
+                thousand: ",", // thousands separator
+                precision: 2 // decimal places
+            },
+            number: {
+                precision: 0, // default precision on numbers is 0
+                thousand: ",",
+                decimal: "."
+            }
+        }
+
+
+        $(document).ready(function () {
+            var sum = 0;
+            //iterate through each input and add to sum
+            $('.mprecio').each(function () {
+                sum += parseInt($(this).text());
+            });
+            //change value of total
+            $('#mySum').html(accounting.formatMoney(sum));
+
+
+            $('[data-toggle="popover"]').popover()
+            $(".chosen-select").chosen({
+                width: '100%'
+            });
+            $("#myTable").on('input', '.txtCal', function () {
+                var calculated_total_sum = 0;
+                $("#myTable .txtCal").each(function () {
+                    var get_textbox_value = $(this).val();
+                    if ($.isNumeric(get_textbox_value)) {
+                        calculated_total_sum += parseFloat(get_textbox_value);
+                    }
+                });
+                $("#total_sum_value").html(calculated_total_sum);
+            });
+            //            $('#group').editable({
+            //                //                showbuttons: false
+            //            });
+        });
+    </script>
+
+</body>
+
+</html>

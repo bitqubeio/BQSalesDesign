@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nuevo Item - SISRV</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-sisrv">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> SISRV
+                </a>
+                <ul class="nav navbar-nav float-xs-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="app" href="#">Max Sullca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Configuración</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Salir</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <nav class="navbar navbar-light menu-bg">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Nueva Venta</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ingrM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingresos</a>
+                        <div class="dropdown-menu" aria-labelledby="ingrM">
+                            <a class="dropdown-item" href="#">Facturas de venta</a>
+                            <a class="dropdown-item" href="#">Pagos recibidos</a>
+                            <a class="dropdown-item" href="#">Boletas de ventas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Egresos</a>
+                        <div class="dropdown-menu" aria-labelledby="egreM">
+                            <a class="dropdown-item" href="#">Nueva compra</a>
+                            <a class="dropdown-item" href="#">Facturas de proveedores</a>
+                            <a class="dropdown-item" href="#">Pagos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contactos</a>
+                        <div class="dropdown-menu" aria-labelledby="egreM">
+                            <a class="dropdown-item" href="#">Nuevo contacto</a>
+                            <a class="dropdown-item" href="#">Todos</a>
+                            <a class="dropdown-item" href="#">Clientes</a>
+                            <a class="dropdown-item" href="#">Proveedores</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventario</a>
+                        <div class="dropdown-menu" aria-labelledby="inveM">
+                            <a class="dropdown-item" href="#">Nuevo ítem</a>
+                            <a class="dropdown-item" href="#">Lista de ítems</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="cateM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorías</a>
+                        <div class="dropdown-menu" aria-labelledby="cateM">
+                            <a class="dropdown-item" href="#">Nueva categoría</a>
+                            <a class="dropdown-item" href="#">Todos</a>
+                            <a class="dropdown-item" href="#">Marcas</a>
+                            <a class="dropdown-item" href="#">Compra</a>
+                            <a class="dropdown-item" href="#">Venta</a>
+                            <a class="dropdown-item" href="#">Almacenes</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reportes</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <form class="small">
+        <section>
+            <div class="container mt-2" id="container">
+                <h3><i class="fa fa-square" aria-hidden="true"></i> Nuevo ítem</h3>
+                <div class="row mt-2">
+                    <div class="col-xs-3 offset-xs-1">
+                        <div class="form-group">
+                            <label for="codiNI">Código: <span class="text-danger">*</span></label>
+                            <input v-model="codiNI" type="text" class="form-control form-control-sm" id="codiNI" placeholder="Código">
+                        </div>
+                        <div class="form-group">
+                            <label for="codifNI">Código de fábrica: </label>
+                            <input v-model="codifNI" type="text" class="form-control form-control-sm" id="codifNI" placeholder="Código de fábrica">
+                        </div>
+                        <div class="form-group">
+                            <label for="nombNI">Nombre: <span class="text-danger">*</span></label>
+                            <input v-model="nombNI" type="text" class="form-control form-control-sm" id="nombNI" placeholder="Nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="descNI">Descripción: </label>
+                            <textarea v-model="descNI" class="form-control form-control-sm" id="descNI" placeholder="Descripción"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="mediNI">Medidas: </label>
+                            <input v-model="mediNI" type="text" class="form-control form-control-sm" id="mediNI" placeholder="Medidas">
+                        </div>
+                        <div class="form-group">
+                            <label for="marcNI">Marca: </label>
+                            <input v-model="marcNI" type="text" class="form-control form-control-sm" id="marcNI" placeholder="Marca">
+                        </div>
+                        <div class="form-group">
+                            <label for="ubicNI">Ubicación: </label>
+                            <input v-model="ubicNI" type="text" class="form-control form-control-sm" id="ubicNI" placeholder="Ubicación">
+                        </div>
+                        <div class="form-group">
+                            <label for="impuNI">Impuesto: <span class="text-danger">*</span></label>
+                            <select v-model="impuNI" class="form-control form-control-sm" id="impuNI">
+                                <option>18%</option>
+                                <option>0%</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="actiNI">Activo: <span class="text-danger">*</span></label>
+                            <select v-model="actiNI" class="form-control form-control-sm" id="actiNI">
+                                <option>Si</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cateNI">Categorías: <span class="text-danger">*</span></label>
+                            <input v-model="cateNI" type="text" class="form-control form-control-sm" id="cateNI" placeholder="Categorías">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input id="item_inventariable" class="form-check-input" type="checkbox" v-model="itemiIN"> Ítem inventariable
+                                </label>
+                            </div>
+                            <div id="item_inventariable_box" class="card card-block" style="display:none">
+                                <div class="form-group">
+                                    <label for="unidmNI">Unidad de medida: <span class="text-danger">*</span></label>
+                                    <select v-model="unidmNI" class="form-control form-control-sm" id="unidmNI">
+                                        <option>Unidad</option>
+                                        <option>Juego</option>
+                                        <option>Pieza</option>
+                                        <option>Servicio</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cantiNI">Cantidad inicial: </label>
+                                    <input v-model="cantiNI" type="text" class="form-control form-control-sm" id="cantiNI" placeholder="Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="preciNI">Precio inicial: </label>
+                                    <input v-model="preciNI" type="text" class="form-control form-control-sm" id="preciNI" placeholder="Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sminiNI">Stock mínimo: </label>
+                                    <input v-model="sminiNI" type="text" class="form-control form-control-sm" id="sminiNI" placeholder="Nombre">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 offset-xs-4">
+                    </div>
+                    <div class="col-xs-12 text-xs-right">
+                        <hr>
+                        <small class="form-text text-muted">(<span class="text-danger">*</span>) campos obligatorios</small>
+                        <div class="form-group mt-2 text-xs-right">
+                            <button type="button" class="btn">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Guardar y crear otro</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">SISRV es un producto de SintaxSys.com - 2016</span>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+    <script>
+        $('#item_inventariable').change(function () {
+            if (this.checked)
+                $('#item_inventariable_box').show();
+            else
+                $('#item_inventariable_box').hide();
+
+        });
+    </script>
+</body>
+
+</html>

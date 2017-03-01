@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nueva Factura - SISRV</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-sisrv">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> SISRV
+                </a>
+                <ul class="nav navbar-nav float-xs-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="app" href="#">{{ name }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Configuración</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Salir</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <nav class="navbar navbar-light menu-bg bg-faded">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ingresos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Egresos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reportes</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <form class="small">
+        <section>
+            <div class="container mt-2">
+                <h3><i class="fa fa-file-text-o" aria-hidden="true"></i> Nueva Venta</h3>
+                <div class="row mt-2 text-xs-right">
+                    <div class="col-sm-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="frucc">Ruc/Dni: <span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control form-control-sm" id="rucc" placeholder="Ruc o Dni del cliente">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="fnombrec">Cliente: <span class="text-danger">*</span></label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control form-control-sm" id="fnombrec" placeholder="Nombre o Razón Social">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="fruc">Observaciones:</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control form-control-sm" id="obs" placeholder="Observaciones"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="exampleSelect1">Tipo:</label>
+                            <div class="col-sm-9">
+                                <select class="form-control form-control-sm" id="exampleSelect1">
+                                    <option>Sin comprobante</option>
+                                    <option>Factura</option>
+                                    <option>Boleta de venta</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="nrovent">Número:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control form-control-sm" id="nrovent" placeholder="Fd-000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="frucc">Fecha:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control form-control-sm" id="rucc" placeholder="12/12/1212">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="fvendc">Vendedor:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control form-control-sm" id="vendc" value="Max Sullca" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <small class="form-text text-muted">(<span class="text-danger">*</span>) campos obligatorios</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container mt-2">
+                <table class="table table-sm table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <button class="btn btn-sm float-xs-right"><i class="fa fa-plus" aria-hidden="true"></i> Agregar Item</button>
+                </div>
+                <div class="col-xs-12 mt-3"></div>
+                <div class="form-group mt-2 text-xs-right">
+                    <button type="button" class="btn">Cancelar</button>
+                    <button type="button" class="btn"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Vista previa</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-primary">Imprimir y guardar</button>
+                </div>
+            </div>
+        </section>
+    </form>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">SISRV es un producto de SintaxSys.com - 2016</span>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data: {
+                name: "Max Sullca"
+            }
+        });
+
+    </script>
+</body>
+
+</html>

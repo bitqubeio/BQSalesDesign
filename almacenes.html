@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Almacenes - SISRV</title>
+    <!--CSS globales inicio-->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!--CSS globales fin-->
+
+    <!--CSS locales inicio-->
+    <link rel="stylesheet" href="libs/datatables/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="libs/datatables/css/responsive.dataTables.min.css">
+    <!--CSS locales fin-->
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+</head>
+
+<body>
+    <header>
+        <!--       Menú principal inicio-->
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded bg-sisrv">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="SISRV"> SISRV
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="app" href="#">Max Sullca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Configuración</a>
+                        </li>
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link dropdown-toggle" href="#" id="notificaciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-globe" aria-hidden="true"><span>1</span></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificaciones">
+                                <a class="dropdown-item" href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nueva venta (Sucursal1) Nueva venta</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Nueva compra (Sucursal1)</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Reporte semanal</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Reporte mensual</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Reporte anual</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Nuevo Stock mínimo</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-usd" aria-hidden="true"></i> Pago por vencerse</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" title="Salir"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--        Menú principal fin-->
+        <!--       Menú secundario inicio-->
+        <div class="container">
+            <nav class="navbar navbar-toggleable-md navbar-light menu-bg">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContentt" aria-controls="navbarSupportedContentt" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContentt">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nueva Venta</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="ingrM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ventas</a>
+                            <div class="dropdown-menu" aria-labelledby="ingrM">
+                                <a class="dropdown-item" href="#">Facturas de venta</a>
+                                <a class="dropdown-item" href="#">Boletas de venta</a>
+                                <a class="dropdown-item" href="#">Tickets de venta</a>
+                                <a class="dropdown-item" href="#">Notas de crédito</a>
+                                <a class="dropdown-item" href="#">Pagos recibidos</a>
+                                <a class="dropdown-item" href="#">Cotizaciones</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compras</a>
+                            <div class="dropdown-menu" aria-labelledby="egreM">
+                                <a class="dropdown-item" href="#">Nueva compra</a>
+                                <a class="dropdown-item" href="#">Facturas de Compras</a>
+                                <a class="dropdown-item" href="#">Pagos realizados</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventario</a>
+                            <div class="dropdown-menu" aria-labelledby="inveM">
+                                <a class="dropdown-item" href="#">Nuevo ítem</a>
+                                <a class="dropdown-item" href="#">Lista de ítems</a>
+                                <a class="dropdown-item" href="#">Valor del inventario</a>
+                                <a class="dropdown-item" href="#">Almacenes</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cajas</a>
+                            <div class="dropdown-menu" aria-labelledby="inveM">
+                                <a class="dropdown-item" href="#">Nueva caja</a>
+                                <a class="dropdown-item" href="#">Lista de cajas</a>
+                                <a class="dropdown-item" href="#">Valor total</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contactos</a>
+                            <div class="dropdown-menu" aria-labelledby="egreM">
+                                <a class="dropdown-item" href="#">Nuevo contacto</a>
+                                <a class="dropdown-item" href="#">Todos</a>
+                                <a class="dropdown-item" href="#">Clientes</a>
+                                <a class="dropdown-item" href="#">Proveedores</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportes</a>
+                            <div class="dropdown-menu" aria-labelledby="inveM">
+                                <a class="dropdown-item" href="#">.. de ventas</a>
+                                <a class="dropdown-item" href="#">.. de compra</a>
+                                <a class="dropdown-item" href="#">.. administrativos</a>
+                                <a class="dropdown-item" href="#">.. contables</a>
+                                <a class="dropdown-item" href="#">.. por usuario</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" id="cateM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorización</a>
+                            <div class="dropdown-menu" aria-labelledby="cateM">
+                                <a class="dropdown-item" href="#">Categorías de ítems</a>
+                                <a class="dropdown-item active" href="#">Marcas de ítems</a>
+                                <a class="dropdown-item" href="#">Almacenes</a>
+                                <a class="dropdown-item" href="#">Tipos de venta</a>
+                                <a class="dropdown-item" href="#">Tipos de compra</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--        Menú secundario fin-->
+    </header>
+    <!--contenido de almacenes inicio-->
+    <section>
+        <div class="container mt-4">
+            <h3><i class="fa fa-archive" aria-hidden="true"></i> Almacenes</h3>
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-right">
+                        <a class="btn btn-default btn-sm" href="#" data-toggle="modal" data-target="#almacen_modal"><i class="fa fa-plus" aria-hidden="true"></i> Agregar almancén</a>
+                    </p>
+                </div>
+                <table class="table table-ssm table-striped responsive" id="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th class="all">Nombre</th>
+                            <th class="desktop">Descripción</th>
+                            <th class="min-mobile-l">Creado</th>
+                            <th class="text-xs-center all">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><span style="display:none">id:</span>1</th>
+                            <td><a href="http://bienvenido.com/hola1#">Volvo</a></td>
+                            <td>Bajo esta marca se registrarán todos los ítems que pertenecen a la marca original Volvo Bajo esta marca se registrarán todos los ítems que pertenecend</td>
+                            <td>12/12/2016</td>
+                            <td class="text-xs-center"><a href="http://bienvenido.com/hola1#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-times-circle-o" aria-hidden="true" title="Activar"></i></a>
+                                <button class="btn btn-link m-0 p-0 align-baseline" data-toggle="modal" data-target="#almacen_modal"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="http://bienvenido.com/hola2#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="http://bienvenido.com/hola2#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><a href="http://bienvenido.com/hola2#">Volvo</a></td>
+                            <td>Bajo esta marca se registrarán todos los ítems que pertenecen a la marca original Volvo</td>
+                            <td>12/12/2016</td>
+                            <td class="text-xs-center"><a href="http://bienvenido.com/hola3#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="http://bienvenido.com/hola4">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="http://bienvenido.com/#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">Mahle</a></td>
+                            <td>Bajo esta marca se registran los items de la marca Mahle</td>
+                            <td>23/04/2016</td>
+                            <td class="text-xs-center"><a href="#"><i class="fa fa-eye" aria-hidden="true" title="Ver detalle"></i></a><a href="#"><i class="fa fa-pencil" aria-hidden="true" title="Editar"></i></a><a href="#"><i class="fa fa-check-circle-o" aria-hidden="true" title="Desactivar"></i></a><a href="#"><i class="fa fa-remove" aria-hidden="true" title="Remover"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!--contenido de almacenes fin-->
+
+    <!-- Modal -->
+    <div class="modal fade malert bd-example-modal-sm" id="almacen_modal" tabindex="-1" role="dialog" aria-labelledby="almacen_modal" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">Eliminar ítem</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <table style="width:100%" align="center">
+                        <tbody>
+                            <tr>
+                                <td class="text-right"><small><i class="fa fa-exclamation-circle fa-3x" aria-hidden="true"></i></small></td>
+                                <td class="align-middle"><small>¿Está seguro de eliminar este ítem?<br>Esta acción no se puede deshacer.</small></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-sm" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary btn-sm">Si</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal fin-->
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">SISRV es un producto de SintaxSys.com - 2016</span>
+        </div>
+    </footer>
+
+    <!--Librerias globales inicio-->
+    <script src="libs/jquery/jquery-3.1.1.min.js"></script>
+    <script src="libs/bootstrap/js/tether.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/mousetrap/mousetrap.min.js"></script>
+    <!--Librerias globales fin-->
+
+    <!--Librerias para almacenes (listado) inicio-->
+    <script src="libs/datatables/js/jquery.dataTables.js"></script>
+    <script src="libs/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="libs/datatables/js/dataTables.keyTable.js"></script>
+    <script src="libs/datatables/js/dataTables.responsive.min.js"></script>
+    <!--Librerias para almacenes (listado) fin-->
+
+    <!--JS globales inicio-->
+    <script src="js/global.js"></script>
+    <!--JS globales fin-->
+
+    <script>
+        $(document).ready(function () {
+            $.fn.dataTable.render.ellipsis = function (cutoff) {
+                return function (data, type, row) {
+                    return type === 'display' && data.length > cutoff ?
+                        data.substr(0, cutoff) + '…' :
+                        data;
+                }
+            };
+            var table = $('#table').DataTable({
+                keys: true,
+                stateSave: true,
+//                responsive: true,
+                columnDefs: [{
+                    targets: 2,
+                    render: $.fn.dataTable.render.ellipsis(87),
+    }]
+            });
+            table
+                .on('key', function (e, datatable, key, cell, originalEvent) {
+                    if (key === 13) {
+                        var rowData = datatable.row(cell.index().row).data();
+                        var url = $(rowData[1]).attr("href");
+                        window.location.href = url;
+                    }
+                });
+        });
+    </script>
+</body>
+
+</html>

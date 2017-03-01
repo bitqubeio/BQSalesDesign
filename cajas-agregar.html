@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nueva caja - SISRV</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+</head>
+
+<body>
+    <header>
+        <header>
+            <nav class="navbar navbar-light bg-sisrv">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> SISRV
+                    </a>
+                    <button class="navbar-toggler hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation"></button>
+                    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+                        <ul class="nav navbar-nav float-xs-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="app" href="#">Max Sullca</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Configuración</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Salir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <nav class="navbar navbar-light menu-bg">
+                    <button class="navbar-toggler hidden-lg-up float-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar3" aria-controls="exCollapsingNavbar3" aria-expanded="false" aria-label="Toggle navigation"></button>
+                    <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar3">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nueva Venta</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="ingrM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ventas</a>
+                                <div class="dropdown-menu" aria-labelledby="ingrM">
+                                    <a class="dropdown-item" href="#">Facturas de venta</a>
+                                    <a class="dropdown-item" href="#">Boletas de venta</a>
+                                    <a class="dropdown-item" href="#">Tickets de venta</a>
+                                    <a class="dropdown-item" href="#">Notas de crédito</a>
+                                    <a class="dropdown-item" href="#">Pagos recibidos</a>
+                                    <a class="dropdown-item" href="#">Cotizaciones</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compras</a>
+                                <div class="dropdown-menu" aria-labelledby="egreM">
+                                    <a class="dropdown-item" href="#">Nueva compra</a>
+                                    <a class="dropdown-item" href="#">Facturas de Compras</a>
+                                    <a class="dropdown-item" href="#">Pagos realizados</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventario</a>
+                                <div class="dropdown-menu" aria-labelledby="inveM">
+                                    <a class="dropdown-item" href="#">Nuevo ítem</a>
+                                    <a class="dropdown-item" href="#">Lista de ítems</a>
+                                    <a class="dropdown-item" href="#">Valor del inventario</a>
+                                    <a class="dropdown-item" href="#">Almacenes</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cajas</a>
+                                <div class="dropdown-menu" aria-labelledby="inveM">
+                                    <a class="dropdown-item" href="#">Nueva caja</a>
+                                    <a class="dropdown-item" href="#">Lista de cajas</a>
+                                    <a class="dropdown-item" href="#">Valor total</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contactos</a>
+                                <div class="dropdown-menu" aria-labelledby="egreM">
+                                    <a class="dropdown-item" href="#">Nuevo contacto</a>
+                                    <a class="dropdown-item" href="#">Todos</a>
+                                    <a class="dropdown-item" href="#">Clientes</a>
+                                    <a class="dropdown-item" href="#">Proveedores</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportes</a>
+                                <div class="dropdown-menu" aria-labelledby="inveM">
+                                    <a class="dropdown-item" href="#">.. de ventas</a>
+                                    <a class="dropdown-item" href="#">.. de compra</a>
+                                    <a class="dropdown-item" href="#">.. administrativos</a>
+                                    <a class="dropdown-item" href="#">.. contables</a>
+                                    <a class="dropdown-item" href="#">.. por usuario</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="cateM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorización</a>
+                                <div class="dropdown-menu" aria-labelledby="cateM">
+                                    <a class="dropdown-item" href="#">Categorías de ítems</a>
+                                    <a class="dropdown-item" href="#">Marcas de ítems</a>
+                                    <a class="dropdown-item" href="#">Almacenes</a>
+                                    <a class="dropdown-item" href="#">Tipos de venta</a>
+                                    <a class="dropdown-item" href="#">Tipos de compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </header>
+    <section>
+        <div class="container mt-2" id="container">
+            <h3><i class="fa fa-plus" aria-hidden="true"></i> Nueva caja</h3>
+            <div class="container">
+                <div class="row mt-2">
+                    <div class="col-xs-5 offset-xs-1">
+                        <form class="small">
+                            <div class="form-group">
+                                <label for="caja_nombre">Nombre: <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control form-control-sm" id="caja_nombre" name="caja_nombre" placeholder="Nombre de la caja">
+                            </div>
+                            <div class="form-group">
+                                <label for="caja_descripcion">Descripción:</label>
+                                <textarea class="form-control form-control-sm" id="caja_descripcion" name="caja_descripcion" placeholder="Descripción de la caja"></textarea>
+                            </div>
+                            <small class="text-muted mt-1">(<span class="text-danger">*</span>) campos obligatorios</small>
+                            <div class="form-group mt-1 text-xs-right">
+                                <button type="button" class="btn btn-sm">Cancelar</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Guardar y crear otro</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">SISRV es un producto de SintaxSys.com - 2016</span>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="libs/jquery/jquery-3.1.1.min.js"></script>
+    <script src="libs/bootstrap/js/tether.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/chartjs/Chart.min.js"></script>
+
+    <script>
+        $("input[type=text]").focus(function () {
+            this.select();
+        });
+         $("textarea").focus(function () {
+            this.select();
+        });
+    </script>
+
+
+</body>
+
+</html>

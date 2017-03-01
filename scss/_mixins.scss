@@ -1,0 +1,11 @@
+@mixin nav-color() {
+    background: $background-light;
+    border-bottom: $border-light;
+    border-left: $border-light;
+    border-right: $border-light;
+}
+
+@mixin color-hover($color) {
+    background-color: $color;
+    border-color: $color;
+}

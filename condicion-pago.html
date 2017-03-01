@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://sisrv.app/paymentcondition/create -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Marcas - SISRV</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+</head>
+
+<body>
+    <header>
+        <header>
+            <nav class="navbar navbar-light bg-sisrv">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/favicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> SISRV
+                    </a>
+                    <button class="navbar-toggler hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation"></button>
+                    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+                        <ul class="nav navbar-nav float-xs-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="app" href="#">Max Sullca</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Configuración</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Salir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <nav class="navbar navbar-light menu-bg">
+                    <button class="navbar-toggler hidden-lg-up float-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar3" aria-controls="exCollapsingNavbar3" aria-expanded="false" aria-label="Toggle navigation"></button>
+                    <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar3">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Nueva Venta</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="ingrM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ventas</a>
+                                <div class="dropdown-menu" aria-labelledby="ingrM">
+                                    <a class="dropdown-item" href="#">Facturas de venta</a>
+                                    <a class="dropdown-item" href="#">Boletas de venta</a>
+                                    <a class="dropdown-item" href="#">Tickets de venta</a>
+                                    <a class="dropdown-item" href="#">Notas de crédito</a>
+                                    <a class="dropdown-item" href="#">Pagos recibidos</a>
+                                    <a class="dropdown-item" href="#">Cotizaciones</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compras</a>
+                                <div class="dropdown-menu" aria-labelledby="egreM">
+                                    <a class="dropdown-item" href="#">Nueva compra</a>
+                                    <a class="dropdown-item" href="#">Facturas de Compras</a>
+                                    <a class="dropdown-item" href="#">Pagos realizados</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventario</a>
+                                <div class="dropdown-menu" aria-labelledby="inveM">
+                                    <a class="dropdown-item" href="#">Nuevo ítem</a>
+                                    <a class="dropdown-item" href="#">Lista de ítems</a>
+                                    <a class="dropdown-item" href="#">Valor del inventario</a>
+                                    <a class="dropdown-item" href="#">Almacenes</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cajas</a>
+                                <div class="dropdown-menu" aria-labelledby="inveM">
+                                    <a class="dropdown-item" href="#">Nueva caja</a>
+                                    <a class="dropdown-item" href="#">Lista de cajas</a>
+                                    <a class="dropdown-item" href="#">Valor total</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="egreM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contactos</a>
+                                <div class="dropdown-menu" aria-labelledby="egreM">
+                                    <a class="dropdown-item" href="#">Nuevo contacto</a>
+                                    <a class="dropdown-item" href="#">Todos</a>
+                                    <a class="dropdown-item" href="#">Clientes</a>
+                                    <a class="dropdown-item" href="#">Proveedores</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="inveM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportes</a>
+                                <div class="dropdown-menu" aria-labelledby="inveM">
+                                    <a class="dropdown-item" href="#">.. de ventas</a>
+                                    <a class="dropdown-item" href="#">.. de compra</a>
+                                    <a class="dropdown-item" href="#">.. administrativos</a>
+                                    <a class="dropdown-item" href="#">.. contables</a>
+                                    <a class="dropdown-item" href="#">.. por usuario</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="cateM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorización</a>
+                                <div class="dropdown-menu" aria-labelledby="cateM">
+                                    <a class="dropdown-item" href="#">Categorías de ítems</a>
+                                    <a class="dropdown-item" href="#">Marcas de ítems</a>
+                                    <a class="dropdown-item" href="#">Almacenes</a>
+                                    <a class="dropdown-item" href="#">Tipos de venta</a>
+                                    <a class="dropdown-item" href="#">Tipos de compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section>
+            <div class="container mt-4" id="container">
+                <h3><i class="fa fa-plus" aria-hidden="true"></i> Nueva condición de pago</h3>
+                <div class="row mt-4">
+                    <div class="col-12 offset-0 col-md-6 offset-md-1 col-lg-5 offset-lg-1">
+
+                        <form method="POST" action="http://sisrv.app/category" accept-charset="UTF-8" class="small">
+                            <input name="_token" type="hidden" value="PkRqldG4Z0IhpmTGZJ98mgPR44xFp87lRUVD9xK7">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div id="field_paymenttype_name" class="form-group">
+                                        <label for="paymenttype_name" class="form-control-label">
+                                            Nombre:
+                                        </label>
+
+                                        <span class="text-danger">*</span>
+
+                                        <div class="controls">
+                                            <input class="form-control form-control-sm mousetrap" placeholder="Nombre de la categoría" autocomplete="off" autofocus="autofocus" id="paymenttype_name" name="paymenttype_name" type="text">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-6">
+                                    <div id="field_paymenttype_mode" class="form-group">
+                                        <label for="paymenttype_mode" class="form-control-label">
+                                            Modo de pago:
+                                        </label>
+
+
+                                        <div class="controls">
+                                            <select class="form-control form-control-sm mousetrap" id="paymenttype_mode" name="paymenttype_mode">
+<!--                                                <option value="" selected="selected"></option>-->
+                                                <option value="CONTADO" selected="selected">CONTADO</option>
+                                                <option value="CREDITO">CREDITO</option>
+                                                <option value="NOTA DE CREDITO">NOTA DE CREDITO</option>
+                                                <option value="PENDIENTE">PENDIENTE</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row" id="hidden">
+                                <div class="col-4">
+                                    <div id="field_paymenttype_payments" class="form-group">
+                                        <label for="paymenttype_payments" class="form-control-label">
+                                            Pagos:
+                                        </label>
+
+                                        <span class="text-danger">*</span>
+
+                                        <div class="controls">
+                                            <input class="form-control form-control-sm mousetrap" placeholder="Pagos" autocomplete="off" id="paymenttype_payments" name="paymenttype_payments" type="number">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-4">
+                                    <div id="field_paymenttype_term" class="form-group">
+                                        <label for="paymenttype_term" class="form-control-label">
+                                            Plazo:
+                                        </label>
+
+                                        <span class="text-danger">*</span>
+
+                                        <div class="controls">
+                                            <input class="form-control form-control-sm mousetrap" placeholder="Plazo" autocomplete="off" id="paymenttype_term" name="paymenttype_term" type="number">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-4">
+                                    <div id="field_paymenttype_interest" class="form-group">
+                                        <label for="paymenttype_interest" class="form-control-label">
+                                            Interés:
+                                        </label>
+
+
+                                        <div class="controls">
+                                            <input class="form-control form-control-sm mousetrap" placeholder="Interés moratorio" autocomplete="off" id="paymenttype_interest" name="paymenttype_interest" type="text">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <small class="text-muted mt-2">(<span class="text-danger">*</span>) campos obligatorios</small>
+                            <div class="form-group mt-2 text-right">
+
+                                <input name="action" class="btn btn-primary btn-sm" type="submit" value="Guardar">
+                                <input name="action" class="btn btn-primary btn-sm" type="submit" value="Guardar y crear otro">
+                                <a href="http://sisrv.app/category">
+                                    <button type="button" class="btn btn-sm">Cancelar</button>
+                                </a>
+                                <a href="http://sisrv.app/category" class="btn btn-link btn-sm"><i class="fa fa-list-ol" aria-hidden="true"></i> Categorías</a>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">SISRV es un producto de SintaxSys.com - 2016</span>
+            </div>
+        </footer>
+
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="libs/jquery/jquery-3.1.1.min.js"></script>
+        <script src="libs/bootstrap/js/tether.min.js"></script>
+        <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+        <script src="libs/chartjs/Chart.min.js"></script>
+
+        <script>
+                $("#paymenttype_mode").on('change', function () {
+                    if ($(this).val() == 'CONTADO') {
+                        $('#hidden').hide();
+                        $('#hidden input').prop("disabled", true);
+
+                    } else {
+                        $('#hidden').show();
+                        $('#hidden input').prop("disabled", false);
+                    }
+                });
+                if ($('#paymenttype_mode').val() == 'CONTADO') {
+                    $('#hidden').hide();
+                    $('#hidden input').prop("disabled", true);
+
+                } else {
+                    $('#hidden').show();
+                    $('#hidden input').prop("disabled", false);
+                }
+        </script>
+</body>
+
+</html>
